@@ -1,0 +1,32 @@
+<!-- Composant Memberlist : Est responsable de l'affichage de la liste des membres -->
+
+<div id="main">
+        <div class="members">
+            <h2>Nos membres</h2>
+            <h3>{{subtitle}}</h3> <!-- Le sous-titre varie en fonction de la recherche effectuée -->
+        </div>
+
+        <!-- Génère autant de fois le composant member qu'il y a de membres dans la liste -->
+        <app-member
+                    *ngFor="let member of membersSearched; let i = index"
+                    [member]="member"
+                    [id]="member.id"
+                    [index] = "i">
+                    
+        </app-member>
+</div>
+        <!-- Si une recherche est en cours, affiche le bouton permettant d'effacer la recherche en fin de liste -->
+        <button *ngIf="isSearching; else elseBlock"  
+                class="load-button"
+                (click)="deleteSearch()"
+                >Effacer la recherche</button>
+
+        <!-- Sinon, annonce la fin de liste, en fin de liste -->
+        <ng-template #elseBlock>
+            <p id="end-list">Vous avez atteint la fin de la liste</p>
+        </ng-template>
+
+<!-- S'il n'y a pas de recherche en cours, affiche le composant barre de recherche en fin de page -->
+<div *ngIf="!isSearching" id="search-bar">
+    <app-search-bar displayText="Rechercher un autre membre"></app-search-bar>
+</div>

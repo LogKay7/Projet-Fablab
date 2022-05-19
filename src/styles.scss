@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Fira Sans, sans-serif;
+    min-height: 660px;
+    min-width: 320px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: #323635;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #323635;
+}
+
+h2{
+    margin: 0;
+    font-family: Oswald, sans-serif;
+}
+
+h3{
+    margin: 0;
+    font-family: Inter, sans-serif;
+    color: #221F20;
+}

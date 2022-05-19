@@ -1,0 +1,87 @@
+.content{
+    margin: 24px 8px 24px 24px;
+}
+
+.content-scroll{
+    height: 430px;
+    overflow: auto;
+    padding-right: 15px;
+}
+
+h2{
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 27px;
+    line-height: 40px;
+}
+
+.skills-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.text{
+    margin-top: 16px;
+    margin-bottom: 24x;
+    border-bottom: 2px solid black;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+a{
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.contact{
+    margin: 24px 0;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.contact p:last-child{
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+}
+
+.contact a{
+    margin: 0;
+}
+
+#search-bar{
+    font-weight: 700;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    margin: 0;
+    background-color: #FFF02A;
+}
+
+.noskill{
+    width: fit-content;
+    height: 14px;
+    padding: 8px 10px;
+    border-radius: 15px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: #221F20;
+    color: white;
+}
+
+// modifie la taille de la fenêtre scroll en focntion de la taille
+@media screen and (max-width: 500px){
+    .content-scroll{
+        height: 450px;
+    }
+  }
+  
+@media screen and (min-width: 500px){
+    .content-scroll{
+        height: 700px;
+    }
+  }

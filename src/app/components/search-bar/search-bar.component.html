@@ -1,0 +1,27 @@
+   <!-- Composant Search bar : Affiche une barre de recherche et son titre. -->
+   
+   <label for="search-input">{{ displayText }}</label> <!-- Texte variable selon l'emplacement de la barre de recherche-->
+<div class="zone-recherche">
+    <input  id="search-input" 
+            type="search" 
+            placeholder="ex. Nom" 
+            aria-label="ex. Nom" 
+            autofocus
+            name='search'
+            [formControl]="research"
+            [value] = 'research.value'
+            (keyup.enter)="goMembers();"  
+           >
+
+           <!-- Icone "croix" s'affichant uniquement si une recherche est en cours, permet de supprimer la recherche en cours -->
+           <div [ngClass]="(isSearching)?'visible':'hidden'"   
+                class="btn-delete-search"
+                (click)='deleteSearch()'
+           ></div>  
+
+    <div class="btn-recherche" 
+         routerLink="/membres"
+         ></div>    <!-- Icone "loupe", permet d'effectuer la recherche lors du clic -->
+</div>
+
+

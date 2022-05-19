@@ -1,0 +1,24 @@
+<!-- Point central de l'application, affiche les différents composants -->
+
+<!-- Composant Loading, affichée tant que les données ne sont pas totalement chargées -->
+<div *ngIf="!isLoaded; else elseBlock">
+  <app-loading></app-loading> 
+</div>
+
+<ng-template #elseBlock>
+    <div id="shadow">
+        <div class="main" [ngClass]="{'header-reduce': !isRoot}">   <!-- Réduit le header selon la situation -->
+            <div class="logo">
+                <div class="logoFablab" routerLink="/membres"></div> <!-- Logo Fablab -->
+                <div class="deconnexion" routerLink="/membres"></div> <!-- Picto déconnexion --> <!-- Bouton déconnexion à rediriger vers une page de connexion -->
+            </div>
+            <!-- Barre de recherche du header -->
+            <app-search-bar class="search"
+                        [ngClass]="{'hidden': !isRoot}"
+                        displayText="Trouver un membre">
+            </app-search-bar>
+        </div>   
+    </div>
+    <router-outlet></router-outlet>     <!-- Zone où sont afficher les composants qui changent : Liste, détails membres, page 404, etc -->
+
+</ng-template>

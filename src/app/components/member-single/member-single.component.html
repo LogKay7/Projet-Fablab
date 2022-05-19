@@ -1,0 +1,37 @@
+<!-- Composant Member single : page contenant les détails d'un membre. Affiché lorsque l'on clique sur un membre dans la liste des membres -->
+
+<div class="content" *ngIf="canDisplay">    <!-- Si le membre existe, affiche le contenu -->
+    <div class="content-scroll">
+        <h2>{{firstname | nameCase}} {{lastname | nameCase}}</h2> 
+
+        <!-- Si le membre a des compétences, génère les tags correspondants via le composants member-skills-->
+        <div class="skills-container" *ngIf="skills.length; else elseBlock">
+            <app-member-skills *ngFor="let skill of skills"
+                                [skillId] = "skill.id"
+                                [skillName] = "skill.name"
+                                [skillSlug] = "skill.slug">
+            </app-member-skills>
+        </div>
+        <!-- Si le membre n'a renseigné aucune compétence -->
+        <ng-template #elseBlock><p class="noskill">Aucune compétence renseignée</p></ng-template>
+        
+        <div class="text">
+            <p>{{description ? description : " "}}</p> 
+            <div class="contact">
+                <p>Contacter par téléphone</p> 
+                <p><a id='phoneLink' (click)='isPhonePresent()'>{{phone ? phone : "Aucun numéro renseigné"}}</a></p>
+            </div>
+            <div class="contact">
+                <p>Contacter par e-mail</p>
+                <p><a id='mailLink' (click)='isEmailPresent()'>{{email && email!="false" ? email : "Aucune adresse e-mail renseignée"}}</a></p>
+            </div> <!-- Vérifie si les renseignements sont présents et les affiche, sinon affiche un texte de remplacement -->
+        </div>
+        <a routerLink="/membres" routerLinkActive="lien-retour-accueil">&lt; retour à la liste</a>
+        <!-- Lien de retour vers l'accueil -->
+    </div>
+</div>
+<div id="search-bar">
+    <!-- Composant barre de recherche, en bas de page -->
+    <app-search-bar displayText="Rechercher un autre membre"
+    ></app-search-bar>
+</div>

@@ -1,0 +1,96 @@
+#shadow{
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.main{
+    background-color: #FFF62A;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 27% 100%, 0 90%);
+    width:100%;
+    height: 165px;
+    z-index: 0;
+    font-weight: 700;
+    transition: height 0.6s ease;
+}
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.logoFablab{
+    width: 49px;
+    height: 58px;
+    margin-left: 16px;
+    margin-top: 10px;
+
+    background-image: url(../assets/Images/header-brand.svg), ;
+    background-repeat: no-repeat;
+    
+    z-index: 5000;
+}
+
+.logoFablab:focus{
+    outline: none;
+}
+
+.logoFablab:active{
+   filter: drop-shadow(0 0 2px rgba(51, 51, 51, 0.596));
+}
+
+.deconnexion{
+    width: 30px;
+    height: 27px;
+    margin-right: 24px;
+    margin-top: 20px;
+    background-image: url(../assets/Images/deco.svg), ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.deconnexion:focus{
+    outline: none;
+}
+
+.deconnexion:active{
+   filter: drop-shadow(0 0 2px rgba(51, 51, 51, 0.596));
+}
+
+h1{
+    width: 288px;
+    height: 40px;
+    font-family: Oswald-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 27px;
+    line-height: 40px;
+    
+    margin: 0;
+}
+    
+h3{
+    width: 209px;
+    height: 15px;
+    bottom: 20px;
+
+    margin: 0 0 30px 0;
+
+    font-family: Inter-SemiBold;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.search{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.header-reduce{
+    height: 90px;
+}
+
+.hidden{
+    visibility: hidden;
+    opacity: 0;
+}

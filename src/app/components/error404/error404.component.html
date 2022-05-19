@@ -1,0 +1,22 @@
+<!-- Composant error404 : affiché lorsque l'utilisateur modifie manuellement l'url et que la page n'existe pas -->
+
+<div class="content">
+    <h2>Le profil n’existe pas ou plus.</h2>
+    <div class="text" >
+        <p>
+            La page que vous recherchez ne semble plus être disponible.
+        </p> 
+        <p>
+            Il se peut que le profil ait été renommé ou modifié. 
+            Nous vous conseillons d’utiliser le moteur de recherche 
+            ou de revenir à l’accueil pour retrouver 
+            la personne recherchée.
+        </p>
+    </div>
+    <a routerLink="/membres" routerLinkActive="lien-retour-accueil">&lt; retour à l'accueil</a>
+</div> <!-- Lien de retour vers l'accueil -->
+
+
+<div id="search-bar">   <!-- Composant barre de recherche, affiché en bas de page -->
+    <app-search-bar displayText="Rechercher un autre membre"></app-search-bar>
+</div>

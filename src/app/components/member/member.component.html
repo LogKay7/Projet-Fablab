@@ -1,0 +1,26 @@
+<!-- Composant Member : Représente 1 "vignette" membre dans la liste des membres, multipliée par le nombre de membres -->
+
+<div class="member"
+     [routerLink]="[id]">   <!-- Clic sur un membre : renvoie vers ses détails grâce à son id -->
+
+    <h2>{{member.firstname | nameCase }} {{member.lastname | nameCase }}</h2>
+        <!-- Affichage du prénom/nom du membre. Le pipe nameCase permet de mettre en majuscule la première lettre de ceux-ci, noms composés compris et en excluant certaines prépositions -->
+
+
+    <div class="skills-container" *ngIf="member.skills.length else elseBlock"> 
+         <!-- Bloc affiché si le membre possède au moins un skill -->
+
+        <app-member-skills *ngFor="let skill of member.skills | slice:0:1"
+                            [skillName] = "skill.name"
+        ></app-member-skills>
+            <!-- Génère des composants "member-skills" mais n'en affiche qu'un, grâce au slice -->
+
+        <app-member-skills  *ngIf="member.skills.length > 1"   
+                            class="btn-more-skills"                            
+                           [skillName] = "member.skills.length - 1+' de plus...'"
+                           [isDisplayed] = false></app-member-skills>
+    </div>  <!-- Si plus d'une compétence, affiche le tag "n de plus" -->
+
+    <ng-template #elseBlock><p class="noskill">Aucune compétence renseignée</p></ng-template>
+    <!-- Affiché uniquement si le membre n'a pas renseigné de compétences -->
+</div>

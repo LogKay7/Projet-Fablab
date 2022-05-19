@@ -1,0 +1,5 @@
+<!-- Composant member skills : Affiché pour chaque membre. Représente les "tags" de compétences -->
+
+<div class="skill" [ngClass]="(isDisplayed)?'displayed-skill':'btn-more-skill'">
+    {{skillName}}
+</div>  <!-- Si la compétence est directement visible, lui donne le style classique, si elle est remplacée par "n de plus", lui donne le style correspondant-->
