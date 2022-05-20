@@ -1,5 +1,5 @@
 # Projet-Fablab
-Progressive Web App made for Fablab Wapi
+Progressive Web App made for Fablab Wapi in Angular
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
